@@ -1,0 +1,29 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+
+}
+
+body header .design{
+  filter: drop-shadow(-1px 4px 6px rgba(0, 0, 0, 0.8));
+}
+
+body header .design-left{
+  background: blue;
+  height: 280px;
+  width: 100%;
+  position: absolute;
+  clip-path: polygon(0 0, 100% 0, 100% 35%, 0 100%);
+}
+
+
+body header .design-right{
+  background: rgba(72, 152, 255, 0.9);
+  height: 280px;
+  width: 100%;
+  position: absolute;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 35%);
+}
