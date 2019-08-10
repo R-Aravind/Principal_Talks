@@ -3,8 +3,19 @@
   padding: 0;
 }
 
-body{
+body header{
+  width: 100%;
+}
 
+body header .mic-image{
+  position: absolute;
+  left: 50%;
+  margin-left: -100px;
+  margin-top: 150px;
+}
+
+body header .mic-image img{
+  width: 200px;
 }
 
 body header .design{
