@@ -37,7 +37,7 @@ body header .mic-image{
   position: absolute;
   left: 50%;
   margin-left: -6vw;
-  margin-top: 150px;
+  margin-top: 110px;
 }
 
 body header .mic-image img{
@@ -102,7 +102,7 @@ body section.noti-body h2{
 }
 
 .notifications .box{
-  width: 500px;
+  width: 480px;
   margin: 50px auto;
   padding: 20px 50px;
   padding-left: 25px;
