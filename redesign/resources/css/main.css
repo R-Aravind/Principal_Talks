@@ -185,6 +185,14 @@ body section.noti-body h2{
 
 /* MOBILE VERSION */
 @media only screen and (max-width: 1024px){
+  body header .content-layer .subtitle{
+    margin-top: 20px;
+    color: #FFF;
+    font-weight: 600;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.8em;
+  }
+
   body header .avatar{
     position: absolute;
     right: 100px;
@@ -206,6 +214,7 @@ body section.noti-body h2{
     width: 80%;
     margin: 40px auto;
     margin-top: 10px;
+
   }
 
   .notifications .box .clap{
@@ -217,5 +226,8 @@ body section.noti-body h2{
     height: 70px;
     font-size: 2em;
     line-height: 70px;
+  }
+  .notifications .box .head .date{
+    font-size: 1.5em;
   }
 }
