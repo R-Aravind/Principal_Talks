@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One|Quicksand|Roboto|Poppins');
+
 *{
   margin: 0;
   padding: 0;
@@ -5,6 +7,27 @@
 
 body header{
   width: 100%;
+}
+
+body header .content-layer{
+  position: absolute;
+  z-index: 2;
+}
+
+body header .content-layer .subtitle{
+  margin-top: 20px;
+  color: #FFF;
+  font-weight: 600;
+  font-family: 'Quicksand', sans-serif;
+  margin-left: 12px;
+}
+
+body header .content-layer .title{
+  font-family: 'Fredoka One', cursive;
+  font-size: 3em;
+  color: #FFF;
+  margin-left: 100px;
+  margin-top: 50px;
 }
 
 body header .mic-image{
@@ -18,9 +41,22 @@ body header .mic-image img{
   width: 200px;
 }
 
+body header .avatar{
+  position: absolute;
+  z-index: 2;
+  right: 100px;
+  top: 130px;
+}
+
+body header .avatar img{
+  height: 120px;
+  border-radius: 100%;
+}
+
 body header .design{
   filter: drop-shadow(-1px 4px 6px rgba(0, 0, 0, 0.8));
 }
+
 
 body header .design-left{
   background: blue;
@@ -29,7 +65,6 @@ body header .design-left{
   position: absolute;
   clip-path: polygon(0 0, 100% 0, 100% 35%, 0 100%);
 }
-
 
 body header .design-right{
   background: rgba(72, 152, 255, 0.9);
