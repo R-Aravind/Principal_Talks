@@ -202,6 +202,11 @@ body section.noti-body h2{
     height: 10vw;
     border-radius: 100%;
   }
+
+  body header .mic-image{
+    margin-top: 190px;
+  }
+
   body section.noti-body{
     margin-top: 200px;
     display: grid;
@@ -230,4 +235,5 @@ body section.noti-body h2{
   .notifications .box .head .date{
     font-size: 1.5em;
   }
+
 }
