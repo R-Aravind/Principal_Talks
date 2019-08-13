@@ -1,3 +1,12 @@
+<?php
+
+  require_once './Auth/user.php';
+
+  auth('./login.php');
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -13,6 +22,7 @@
       <div class="profile">
         <img src="./resources/images/img_avatar.png">
         <span>Hi, Jacob</span> 
+        <span class="logout"><a href="?logout">Logout</a></span>
       </div>
     </header>
 

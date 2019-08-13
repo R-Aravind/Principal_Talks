@@ -1,3 +1,19 @@
+<?php
+
+  require_once './Auth/user.php';
+
+  // login function
+  if(isset($_POST['username']) && isset($_POST['password'])){
+    login($_POST['username'], $_POST['password'], './push.php');
+  }
+
+
+  // if user logged in redirect to push page
+  if($_SESSION['user']){
+    header('Location: ./push.php');
+  }
+
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -17,19 +33,19 @@
 <body>
 
   <div class="container">
-    <form class="login">
+  <form class="login" action="login.php" method="POST">
 
   <fieldset>
 
   	<legend class="legend">Login</legend>
 
     <div class="input">
-    	<input type="email" placeholder="Email" required />
+    	<input type="username" placeholder="Username" name="username" required />
       <span><i class="fa fa-envelope-o"></i></span>
     </div>
 
     <div class="input">
-    	<input type="password" placeholder="Password" required />
+    	<input type="password" placeholder="Password" name="password" required />
       <span><i class="fa fa-lock"></i></span>
     </div>
 
