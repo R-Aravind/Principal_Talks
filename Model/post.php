@@ -77,8 +77,49 @@ function createPost($content){
 
 }
 
-// print_r(getPost(1));
-// createPost('Hello its okay its okay');
+// get last two days posts
+function getHighLights(){
+    $sql = "SELECT * FROM ".Model\TABLE. " WHERE date BETWEEN (CURDATE()-1) AND CURDATE() ORDER BY date DESC, id DESC";
 
+    $conn = mysqli_connect(Model\HOSTNAME, Model\USERNAME, Model\PASSWORD, Model\DATABASE);
+
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+
+    if($result = mysqli_query($conn, $sql)){
+        $out = array();
+        while($row = mysqli_fetch_assoc($result)){
+            $out[] = $row;
+        }
+        return $out;
+    }else{
+        echo 'Cannot execute query';
+    }
+    mysqli_close($conn);
+}
+
+
+// get last 10 posts not in highlights
+function getHistory(){
+    $sql = "SELECT * FROM ".Model\TABLE. " WHERE date <= (CURDATE()-2) ORDER BY date DESC, id DESC LIMIT 5";
+
+    $conn = mysqli_connect(Model\HOSTNAME, Model\USERNAME, Model\PASSWORD, Model\DATABASE);
+
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+
+    if($result = mysqli_query($conn, $sql)){
+        $out = array();
+        while($row = mysqli_fetch_assoc($result)){
+            $out[] = $row;
+        }
+        return $out;
+    }else{
+        echo 'Cannot execute query';
+    }
+    mysqli_close($conn);
+}
 
 ?>
