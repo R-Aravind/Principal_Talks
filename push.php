@@ -8,7 +8,7 @@
 
   // create new post
   if(isset($_POST['content'])){
-    createPost('Hello');
+    createPost(htmlspecialchars($_POST['content'], ENT_QUOTES, 'UTF-8'));
   }
 
   $posts = getAllPost();
@@ -40,6 +40,7 @@
       <main class="post-form">
         <form action="push.php" method="post">
           <h1>POST</h1>
+          <?= csrfToken();?>
           <textarea name="content" id="" cols="30" rows="10"></textarea>
           <button type="submit">POST</button>
         </form>

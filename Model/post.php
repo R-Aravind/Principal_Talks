@@ -5,7 +5,7 @@ require_once 'config.php';
 
 // return all post (returns mysqli_query object)
 function getAllPost(){
-    $sql = "SELECT * FROM ".Model\TABLE. " ORDER BY date DESC LIMIT 10";
+    $sql = "SELECT * FROM ".Model\TABLE. " ORDER BY date DESC, id DESC LIMIT 10";
 
     $conn = mysqli_connect(Model\HOSTNAME, Model\USERNAME, Model\PASSWORD, Model\DATABASE);
 
@@ -48,11 +48,13 @@ function getPost($id){
 // create a new post
 function createPost($content){
 
+    
     if(!empty($content)){
 
-        $sql = "INSERT INTO ".Model\TABLE." (content, likes, dislikes, date)
-        VALUES ('$content', '0', '0' , now())
-        ";
+
+        // echo $content;
+
+        $sql = "INSERT INTO posts (`content`, `likes`, `dislikes`, `date`) VALUES ('". $content ."', '0', '0', NOW())";
 
         $conn = mysqli_connect(Model\HOSTNAME, Model\USERNAME, Model\PASSWORD, Model\DATABASE);
 
@@ -62,7 +64,7 @@ function createPost($content){
         }
 
         if (mysqli_query($conn, $sql)) {
-            echo "New Post is created";
+            // echo "New Post is created";
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
         }
