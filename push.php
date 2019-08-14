@@ -11,6 +11,8 @@
     createPost('Hello');
   }
 
+  $posts = getAllPost();
+
 
 ?>
 
@@ -44,28 +46,28 @@
       </main>
       <aside class="recent">
         <h1>Recent Posts</h1>
+
+        <?php foreach($posts as $post): ?>
+
         <div class="box">
               <div class="head">
-                <small class="date">12/12/2018</small>
+                <small class="date"><?=$post['date']?></small>
               </div>
               <div class="content">
-                Hello its me how is going, this is a test messsage.
-                Hello its me how is going, this is a test messsage.
-                Hello its me how is going, this is a test messsage.
-                Hello its me how is going, this is a test messsage.
+                <?=$post['content']?>
               </div>
               <div class="footer">
                 <div class="clap active">
                  <i class="far fa-thumbs-up"></i>
                </div>
-                <span class="clap-val">1000</span>
+                <span class="clap-val"><?=$post['likes']?></span>
                  <div class="clap-dis active">
                    <i class="far fa-thumbs-down"></i>
                   </div>
-                 <span class="clap-dis-val">50</span>
+                 <span class="clap-dis-val"><?=$post['dislikes']?></span>
                  </div>
             </div>
-
+<?php endforeach;?>
       </aside>
     </section>
 

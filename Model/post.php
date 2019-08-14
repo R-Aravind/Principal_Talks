@@ -5,7 +5,7 @@ require_once 'config.php';
 
 // return all post (returns mysqli_query object)
 function getAllPost(){
-    $sql = "SELECT * FROM ".Model\TABLE;
+    $sql = "SELECT * FROM ".Model\TABLE. " ORDER BY date DESC LIMIT 10";
 
     $conn = mysqli_connect(Model\HOSTNAME, Model\USERNAME, Model\PASSWORD, Model\DATABASE);
 
