@@ -180,3 +180,7 @@ color :#F44336;
 .logout{
     margin-left: 30px;
 }
+
+button{
+    cursor: pointer;
+}

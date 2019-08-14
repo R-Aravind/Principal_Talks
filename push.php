@@ -1,8 +1,16 @@
 <?php
 
   require_once './Auth/user.php';
+  auth('./login.php'); //authentication required
 
-  auth('./login.php');
+  require_once './Model/post.php';
+
+
+  // create new post
+  if(isset($_POST['content'])){
+    createPost('Hello');
+  }
+
 
 ?>
 
@@ -28,10 +36,10 @@
 
     <section class="body">
       <main class="post-form">
-        <form action="">
+        <form action="push.php" method="post">
           <h1>POST</h1>
-          <textarea name="" id="" cols="30" rows="10"></textarea>
-          <button>POST</button>
+          <textarea name="content" id="" cols="30" rows="10"></textarea>
+          <button type="submit">POST</button>
         </form>
       </main>
       <aside class="recent">
@@ -47,84 +55,16 @@
                 Hello its me how is going, this is a test messsage.
               </div>
               <div class="footer">
-                  <div class="clap active">
-                      <i class="far fa-thumbs-up"></i>
-                    </div>
-                    <span class="clap-val">1000</span>
-                    <div class="clap-dis active">
-                      <i class="far fa-thumbs-down"></i>
-                    </div>
-                    <span class="clap-dis-val">50</span>
+                <div class="clap active">
+                 <i class="far fa-thumbs-up"></i>
+               </div>
+                <span class="clap-val">1000</span>
+                 <div class="clap-dis active">
+                   <i class="far fa-thumbs-down"></i>
                   </div>
-              </div>
-
-
-
-              <div class="box">
-                  <div class="head">
-                    <small class="date">12/12/2018</small>
-                  </div>
-                  <div class="content">
-                    Hello its me how is going, this is a test messsage.
-                    Hello its me how is going, this is a test messsage.
-                    Hello its me how is going, this is a test messsage.
-                    Hello its me how is going, this is a test messsage.
-                  </div>
-                  <div class="footer">
-                      <div class="clap active">
-                          <i class="far fa-thumbs-up"></i>
-                        </div>
-                        <span class="clap-val">1000</span>
-                        <div class="clap-dis active">
-                          <i class="far fa-thumbs-down"></i>
-                        </div>
-                        <span class="clap-dis-val">50</span>
-                      </div>
-                  </div>
-
-              <div class="box">
-                  <div class="head">
-                    <small class="date">12/12/2018</small>
-                  </div>
-                  <div class="content">
-                    Hello its me how is going, this is a test messsage.
-                    Hello its me how is going, this is a test messsage.
-                    Hello its me how is going, this is a test messsage.
-                    Hello its me how is going, this is a test messsage.
-                  </div>
-                  <div class="footer">
-                      <div class="clap active">
-                          <i class="far fa-thumbs-up"></i>
-                        </div>
-                        <span class="clap-val">1000</span>
-                        <div class="clap-dis active">
-                          <i class="far fa-thumbs-down"></i>
-                        </div>
-                        <span class="clap-dis-val">50</span>
-                      </div>
-                  </div>
-
-              <div class="box">
-                  <div class="head">
-                    <small class="date">12/12/2018</small>
-                  </div>
-                  <div class="content">
-                    Hello its me how is going, this is a test messsage.
-                    Hello its me how is going, this is a test messsage.
-                    Hello its me how is going, this is a test messsage.
-                    Hello its me how is going, this is a test messsage.
-                  </div>
-                  <div class="footer">
-                      <div class="clap active">
-                          <i class="far fa-thumbs-up"></i>
-                        </div>
-                        <span class="clap-val">1000</span>
-                        <div class="clap-dis active">
-                          <i class="far fa-thumbs-down"></i>
-                        </div>
-                        <span class="clap-dis-val">50</span>
-                      </div>
-                  </div>
+                 <span class="clap-dis-val">50</span>
+                 </div>
+            </div>
 
       </aside>
     </section>

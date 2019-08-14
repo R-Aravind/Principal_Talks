@@ -1,15 +1,17 @@
 <?php
 
+namespace Auth;
+
 //// USER ////
 
 // Set username
-define('USER_NAME', 'imjack');
+const USER_NAME = 'imjack';
 
 // Set password
-define('PASSWORD', '123456');
+const PASSWORD = '123456';
 
 // Set Name
-define('NAME', 'Jack Sparrow');
+const NAME = 'Jack Sparrow';
 
 // // // // //
 

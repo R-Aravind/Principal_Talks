@@ -2,6 +2,7 @@
 
 require_once 'config.php';
 
+
 session_start();
 
 
@@ -10,7 +11,7 @@ function login($user_name, $password, $redirect='../index.php'){
 
   if(!empty($user_name) && !empty($password)){
     if($_SESSION['token'] == $_POST['token']){
-      if($user_name === USER_NAME && $password === PASSWORD){
+      if($user_name === Auth\USER_NAME && $password === Auth\PASSWORD){
         $_SESSION['user'] = $user_name;
         $_SESSION['login_status'] = 'Sucessful';
         header('Location: '. $redirect);
@@ -59,6 +60,7 @@ login(username, password, redirect) -> login user
 auth(redirect) -> check user is currently logged in otherwise redirect
 csrfToken() -> generate a csrf input
 logout() -> logout user
+?logout -> logout user
 
 */
 //////
