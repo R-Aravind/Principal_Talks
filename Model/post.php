@@ -48,7 +48,7 @@ function getPost($id){
 // create a new post
 function createPost($content){
 
-    
+
     if(!empty($content)){
 
 
@@ -68,14 +68,14 @@ function createPost($content){
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
         }
-        
+
         mysqli_close($conn);
 
     }else{
         echo 'Content should not be empty!';
     }
 
-    
+
 
 }
 
@@ -121,6 +121,25 @@ function getHistory(){
     }else{
         echo 'Cannot execute query';
     }
+    mysqli_close($conn);
+}
+
+function deletePost($id, $redirect){
+    $sql = "DELETE FROM ".Model\TABLE. " WHERE `id`=$id";
+
+    $conn = mysqli_connect(Model\HOSTNAME, Model\USERNAME, Model\PASSWORD, Model\DATABASE);
+
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+
+    if(mysqli_query($conn, $sql)){
+        echo 'deleted sucessfully';
+        header('Location: '. $redirect);
+    }else{
+        echo 'Error';
+    }
+    
     mysqli_close($conn);
 }
 

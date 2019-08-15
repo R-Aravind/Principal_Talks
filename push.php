@@ -11,8 +11,13 @@
     createPost(htmlspecialchars($_POST['content'], ENT_QUOTES, 'UTF-8'));
   }
 
-  $posts = getAllPost();
+  $posts = getAllPost(); // get last 10 posts
 
+  if($_REQUEST['delete']){
+    if(isset($_GET['id'])){
+      deletePost($_GET['id'], './push.php');
+    }
+  }
 
 ?>
 
@@ -67,6 +72,9 @@
                   </div>
                  <span class="clap-dis-val"><?=$post['dislikes']?></span>
                  </div>
+
+                  <a href="?delete=1&id=<?=$post['id']?>">Delete</a>
+
             </div>
 <?php endforeach;?>
       </aside>
