@@ -63,9 +63,6 @@
             <div class="clap" data-id=<?=$post['id']?> >
               <i class="far fa-thumbs-up"></i>
             </div>
-            <div class="clap-dis" data-id=<?=$post['id']?>>
-              <i class="far fa-thumbs-down"></i>
-            </div>
           </div>
         <?php endforeach; ?>
         <!-- Box End -->
@@ -87,9 +84,6 @@
             <div class="clap">
               <i class="far fa-thumbs-up"></i>
             </div>
-            <div class="clap-dis">
-              <i class="far fa-thumbs-down"></i>
-            </div>    
           </div>
         <?php endforeach;?>
 
