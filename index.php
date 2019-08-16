@@ -81,7 +81,7 @@
             <div class="content">
               <?=$post['content']?>
             </div>
-            <div class="clap">
+            <div class="clap"  data-id=<?=$post['id']?> >
               <i class="far fa-thumbs-up"></i>
             </div>
           </div>

@@ -143,4 +143,24 @@ function deletePost($id, $redirect){
     mysqli_close($conn);
 }
 
+
+// like post
+function likePost($id){
+    $sql = "UPDATE ". Model\TABLE. " SET `likes` = `likes` + 1 WHERE `id` = $id";
+    $conn = mysqli_connect(Model\HOSTNAME, Model\USERNAME, Model\PASSWORD, Model\DATABASE);
+
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+
+    if(mysqli_query($conn, $sql)){
+        echo 'sucess';
+    }else{
+        echo 'error';
+    }
+    
+    mysqli_close($conn);
+}
+
+
 ?>
