@@ -67,10 +67,7 @@
                  <i class="far fa-thumbs-up"></i>
                </div>
                 <span class="clap-val"><?=$post['likes']?></span>
-                 <div class="clap-dis active">
-                   <i class="far fa-thumbs-down"></i>
-                  </div>
-                 <span class="clap-dis-val"><?=$post['dislikes']?></span>
+                 
                  </div>
 
                   <a href="?delete=1&id=<?=$post['id']?>">Delete</a>
