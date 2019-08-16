@@ -13,7 +13,7 @@
 
   $posts = getAllPost(); // get last 10 posts
 
-  if($_REQUEST['delete']){
+  if(isset($_REQUEST['delete'])){
     if(isset($_GET['id'])){
       deletePost($_GET['id'], './push.php');
     }

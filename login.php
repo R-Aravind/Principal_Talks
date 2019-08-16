@@ -9,7 +9,7 @@
 
 
   // if user logged in redirect to push page
-  if($_SESSION['user']){
+  if(isset($_SESSION['user'])){
     header('Location: ./push.php');
   }
 
@@ -34,6 +34,9 @@
 
   <div class="container">
   <form class="login" action="login.php" method="POST">
+
+    <?= csrfToken(); ?>
+
 
   <fieldset>
 
