@@ -1,0 +1,133 @@
+// main scss //
+
+// Imports
+@import "card";
+
+// Reset
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+
+// Body
+body{
+	margin-left: 100px;
+	margin-right: 100px;
+	margin-top: 5px;
+}
+
+
+// Heading Section
+header{
+
+	margin-top: 20px;
+
+	h1.main-heading{	
+		display: inline-flex;
+		height: 70px;
+		margin-bottom: 30px;
+
+		.logo{
+			background: green;
+			width: 80px;
+			height: 80px;
+			border-radius: 100%;
+			font-size: 0.7em;
+			text-align: center;
+			line-height: 80px;
+			color: #FFF;
+			position: relative;
+			right: 20px;
+		}
+		.caption{
+			line-height: 70px;
+		}
+	}
+
+
+	h2.sub-heading{
+
+		width: 100%;
+		display: inline-flex;
+		margin-top: 10px;
+
+		height: 50px;
+
+		.pp{
+			img{
+				width: 50px;
+			}
+		}
+
+		.name{
+			font-size: 1.4em;
+			padding-left: 10px;
+			line-height: 75px;
+		}
+	}
+
+}
+
+
+// Pinned Section
+section.pinned-section{
+
+	margin-top: 30px;
+	margin-bottom: 30px;
+
+	.heading{
+		font-size: 2em;
+		font-weight: 300;
+		margin-bottom: 10px;
+	}
+
+	.card{
+		@extend %card;
+		margin-bottom: 20px;
+	}
+
+	.pinned-showmore{
+		font-size: 1.2em;
+		color: gray;
+
+		a, a:active, a:hover, a:visited{
+			color: inherit;
+		}
+
+	}
+}
+
+// Recent Section
+section.recent-section{
+	margin-top: 30px;
+	margin-bottom: 30px;
+
+
+
+	.heading{
+		font-size: 2em;
+		font-weight: 300;
+		margin-bottom: 10px;
+	}
+
+	.recent-cards{
+
+		display: inline-flex;
+
+
+		.card{
+			@extend %card;
+			margin-bottom: 50px;
+			margin-right: 20px;
+		}
+	}
+
+	
+}
+
+
+
+
+
+
