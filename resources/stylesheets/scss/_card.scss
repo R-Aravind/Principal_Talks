@@ -4,13 +4,15 @@
 %card{
 	width: 500px;
 	box-sizing: border-box;
-	padding: 10px 40px 10px 40px;
+	padding: 10px 40px 10px 0px;
 	text-align: justify;
 	position: relative;
 	background: $card-bg;
 	box-shadow: 0px 0px 29px -13px rgba(87,84,87,0.51);
 	border-radius: 12px;
 	font-family: $text-font;
+	display: grid;
+	grid-template-columns: 20% auto;
 
 	@include lg{
 		width: 100%;
@@ -20,25 +22,29 @@
 	.card-date{
 		text-align: center;
 		font-size: 1em;
-		height: 70px;
-		width: 70px;
-		float: left;
-		position: relative;
-		right: 10px;
-		top: 10px;
-		padding-top: 8px;
 		font-weight: bold;
 		line-height: 18px;
 		color: $date-color;
-		border: 1px solid gray;
-
 		box-sizing: border-box;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		line-height: 30px;
+		align-items: center;
+		padding-top: 20px;
 
-		border-image-slice:80;
-		border-image-width:50px;
-		border-image-outset:4px;
-		border-image-repeat:repeat repeat;
-		border-image-source:url("/resources/images/border.png");
+		.day{
+			font-family: $bold-font;
+			font-size: 3em;
+		}
+		.month{
+			font-family: $bold-font;
+			font-size: 1.2em;
+			padding-top: 10px;
+		}
+		.year{
+			font-size: 0.8em;
+		}
 	}
 
 
@@ -91,9 +97,11 @@
 
 <div class="card">
 	<span class="card-date">
-		<div>08</div>
-		<div>May</div>
-		<div>2018</div>
+		<span class="card-date">
+			<div class="day">08</div>
+			<div class="month">May</div>
+			<div class="year">2018</div>
+		</span>
 	</span>
 	<span class="card-content">
 		content
@@ -103,4 +111,6 @@
 	</div>
 </div>
 
+
+Made by github.com/ghostjson
 */
