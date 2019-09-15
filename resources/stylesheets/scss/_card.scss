@@ -1,12 +1,17 @@
 // Card Template
+// include $card-bg & $date-color
 
 %card{
-	border: 1px solid gray;
 	width: 500px;
 	box-sizing: border-box;
 	padding: 10px 40px 10px 40px;
 	text-align: justify;
 	position: relative;
+	background: $card-bg;
+	box-shadow: 0px 0px 29px -13px rgba(87,84,87,0.51);
+	border-radius: 12px;
+	font-family: $text-font;
+
 
 	.card-date{
 		text-align: center;
@@ -19,13 +24,16 @@
 		top: 10px;
 		font-weight: bold;
 		line-height: 22px;
+		color: $date-color;
+		border: 1px solid gray;
 	}
 
 
 	.card-content{
 		font-size: 1.1em;
 		width: 100%;
-		line-height: 28px;
+		line-height: 22px;
+		color: $card-text;
 		&:before{
 			content: '\A';
 			white-space: pre;
@@ -41,13 +49,20 @@
 		right: 40px;
 		top: 85%;
 		padding: 10px;
-		border: 1px solid gray;
 		border-radius: 100%;
+		box-shadow: 0px 0px 50px -8px rgba(148,146,148,1);
+		transition: box-shadow 0.8s;
+
 
 		img{
 			width: inherit;
 			position: relative;
 			left: 2px;
+		}
+
+		&:hover{
+			box-shadow: 0px 0px 50px -8px rgba(41,40,41,1);
+			cursor: pointer;
 		}
 	}
 }

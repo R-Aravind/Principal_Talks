@@ -1,31 +1,57 @@
 // main scss //
 
 // Imports
+@import "color";
+@import "font";
 @import "card";
+
 
 // Reset
 *{
 	margin: 0px;
 	padding: 0px;
+
 }
 
 
-// Body
 body{
+	background: $body-bg;
+}
+
+.container{
 	margin-left: 100px;
 	margin-right: 100px;
 	margin-top: 5px;
+	color: $body-text;
+	font-family: $head-font;
+	margin-bottom: 50px;
+}
+
+// mic image
+aside.mic{
+	position: absolute;
+	right: 35px;
+	top: 55px;
+	img{
+		height: 400px;
+	}
+	// z-index: -1;
 }
 
 
 // Heading Section
 header{
 
-	margin-top: 20px;
+	background: $header-bg;
+	box-shadow: 12px 20px 29px -13px rgba(87,84,87,0.51);
+	box-shadow: 0px 10px 22px -2px rgba(122,122,122,1);
+	color: $card-bg;
+	font-family: $head-font;
+	font-weight: 400;
 
 	h1.main-heading{	
 		display: inline-flex;
-		height: 70px;
+		height: 30px;
 		margin-bottom: 30px;
 
 		.logo{
@@ -41,11 +67,16 @@ header{
 			right: 20px;
 		}
 		.caption{
-			line-height: 70px;
+			line-height: 60px;
+			margin-left: 30px;
 		}
 	}
 
 
+
+}
+
+.container{
 	h2.sub-heading{
 
 		width: 100%;
@@ -57,6 +88,7 @@ header{
 		.pp{
 			img{
 				width: 50px;
+			border-radius: 100%;
 			}
 		}
 
@@ -66,9 +98,7 @@ header{
 			line-height: 75px;
 		}
 	}
-
 }
-
 
 // Pinned Section
 section.pinned-section{
@@ -87,21 +117,13 @@ section.pinned-section{
 		margin-bottom: 20px;
 	}
 
-	.pinned-showmore{
-		font-size: 1.2em;
-		color: gray;
-
-		a, a:active, a:hover, a:visited{
-			color: inherit;
-		}
-
-	}
+	
 }
 
 // Recent Section
 section.recent-section{
 	margin-top: 30px;
-	margin-bottom: 30px;
+	margin-bottom: 20px;
 
 
 
@@ -118,7 +140,6 @@ section.recent-section{
 
 		.card{
 			@extend %card;
-			margin-bottom: 50px;
 			margin-right: 20px;
 		}
 	}
@@ -126,7 +147,21 @@ section.recent-section{
 	
 }
 
+.showmore{
+	font-size: 1.2em;
+	color: gray;
 
+	a, a:active, a:hover, a:visited{
+		color: $body-text;
+		text-decoration: none;
+		transition: color 0.5s;
+	}
+
+	a:hover{
+		color: darken($body-text, 10%);
+	}
+
+}
 
 
 
