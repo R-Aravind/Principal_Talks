@@ -15,17 +15,26 @@
 
 	.card-date{
 		text-align: center;
-		font-size: 1.2em;
+		font-size: 1em;
 		height: 70px;
 		width: 70px;
 		float: left;
 		position: relative;
 		right: 10px;
 		top: 10px;
+		padding-top: 8px;
 		font-weight: bold;
-		line-height: 22px;
+		line-height: 18px;
 		color: $date-color;
 		border: 1px solid gray;
+
+		box-sizing: border-box;
+
+		border-image-slice:80;
+		border-image-width:50px;
+		border-image-outset:4px;
+		border-image-repeat:repeat repeat;
+		border-image-source:url("/resources/images/border.png");
 	}
 
 
@@ -58,6 +67,12 @@
 			width: inherit;
 			position: relative;
 			left: 2px;
+			transition: filter 0.5s;
+
+			&:hover{
+				-webkit-filter: contrast(250%);
+				filter: contrast(250%);
+			}
 		}
 
 		&:hover{
