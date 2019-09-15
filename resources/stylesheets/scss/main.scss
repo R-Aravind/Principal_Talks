@@ -170,11 +170,13 @@ section.recent-section{
 	.recent-cards{
 
 		display: inline-flex;
+		flex-wrap: wrap;
 
 
 		.card{
 			@extend %card;
 			margin-right: 20px;
+			margin-bottom: 40px;
 
 			@include lg{
 				margin-bottom: 50px;
