@@ -12,6 +12,10 @@
 	border-radius: 12px;
 	font-family: $text-font;
 
+	@include lg{
+		width: 100%;
+	}
+
 
 	.card-date{
 		text-align: center;
