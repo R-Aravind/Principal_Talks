@@ -1,17 +1,33 @@
 <?php
 
-  require_once './Auth/user.php';
+  include 'autoload.php';
 
-  // login function
+  use \Application\Controller\LoginController;
+
+
+  $admin = new LoginController();
+
   if(isset($_POST['username']) && isset($_POST['password'])){
-    login($_POST['username'], $_POST['password'], './push.php');
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    if(!empty($username) && !empty($password)){
+
+
+      if($admin->login($username, $password)){
+        header('Location: push.php');
+      }else{
+        echo '<h4>Incorrect username or password</h4>';
+      }
+    }
+  }
+
+  if($admin->isLogin()){
+    header('Location: push.php');
   }
 
 
-  // if user logged in redirect to push page
-  if(isset($_SESSION['user'])){
-    header('Location: ./push.php');
-  }
+
 
 ?>
 <!DOCTYPE html>
@@ -21,7 +37,7 @@
   <meta charset="UTF-8">
   <title>Principal Login</title>
 
-    <link rel="stylesheet" href="./resources/css/login.css" media="screen" type="text/css" />
+    <link rel="stylesheet" href="./resources/stylesheets/css/login.css" media="screen" type="text/css" />
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,700">
     <script src="https://kit.fontawesome.com/7d40304bdb.js"></script>
     
@@ -34,8 +50,6 @@
 
   <div class="container">
   <form class="login" action="login.php" method="POST">
-
-    <?= csrfToken(); ?>
 
 
   <fieldset>

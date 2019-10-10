@@ -181,6 +181,14 @@ color :#F44336;
     margin-left: 30px;
 }
 
+.logout a,.logout a:visited, .logout a:active{
+    text-decoration: none;
+    color: #FFF;
+}
+
 button{
     cursor: pointer;
+}
+
+.unpinned{
 }

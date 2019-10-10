@@ -42,14 +42,21 @@ body{
 aside.mic{
 	position: absolute;
 	right: 35px;
-	top: 55px;
+	top:55px;
+	animation-name:anim;
+	animation-duration: 1s;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in-out;
+
 	img{
 		height: 400px;
-
 		@include lg{
 			visibility: hidden;
 		}
+
 	}
+
+	
 	
 
 }
@@ -212,3 +219,14 @@ section.recent-section{
 
 
 
+@keyframes anim{
+		0%{
+			top: -50px;
+		}
+		95%{
+			top: 60px;
+		}
+		100%{
+			top: 55px;
+		}
+	}

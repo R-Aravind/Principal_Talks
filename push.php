@@ -1,41 +1,58 @@
 <?php
 
-  require_once './Auth/user.php';
-  auth('./login.php'); //authentication required
+include 'autoload.php';
 
-  require_once './Model/post.php';
+use \Application\Controller\LoginController;
+use \Application\Model\Post;
+
+$AdminModel = new LoginController();
+$PostModel = new Post();
+
+if(isset($_REQUEST['logout'])){
+  $AdminModel->logout();
+}
 
 
-  // create new post
-  if(isset($_POST['content'])){
-    createPost(htmlspecialchars($_POST['content'], ENT_QUOTES, 'UTF-8'));
+if(!($AdminModel->isLogin())){
+  header('Location: login.php');
+  die();
+}
+
+if(isset($_POST['content'])){
+  $pinned = 0;
+  if(isset($_POST['pinned'])){
+    $pinned = 1;
   }
-
-  $posts = getAllPost(); // get last 10 posts
-
-  if(isset($_REQUEST['delete'])){
-    if(isset($_GET['id'])){
-      deletePost($_GET['id'], './push.php');
-    }
+  $content = $_POST['content'];
+  $content = htmlentities($content);
+  if(!empty($content)){
+    $PostModel->createPost($content,$pinned);
   }
+}
+
+if(isset($_GET['delete']) && isset($_GET['id'])){
+  $id = $_GET['id'];
+  if($AdminModel->isLogin()){
+    $PostModel->deletePost($id);
+  }
+}
+
 
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <title>Push</title>
     <!-- <link rel="stylesheet" href="./resources/css/main.css"> -->
-    <link rel="stylesheet" href="./resources/css/push.css">
+    <link rel="stylesheet" href="./resources/stylesheets/css/push.css">
     <script src="https://kit.fontawesome.com/7d40304bdb.js"></script>
   </head>
   <body>
 
     <header>
       <div class="profile">
-        <img src="./resources/images/img_avatar.png">
+        <img src="./resources/images/avatar.png">
         <span>Hi, Jacob</span> 
         <span class="logout"><a href="?logout">Logout</a></span>
       </div>
@@ -45,15 +62,15 @@
       <main class="post-form">
         <form action="push.php" method="post">
           <h1>POST</h1>
-          <?= csrfToken();?>
           <textarea name="content" id="" cols="30" rows="10"></textarea>
+          <label>Pin: </label><input type="checkbox" name="pinned"><br>
           <button type="submit">POST</button>
         </form>
       </main>
       <aside class="recent">
         <h1>Recent Posts</h1>
 
-        <?php foreach($posts as $post): ?>
+        <?php foreach($PostModel->getRecentPosts() as $post): ?>
 
         <div class="box">
               <div class="head">
@@ -63,6 +80,7 @@
                 <?=$post['content']?>
               </div>
               <div class="footer">
+                
                 <div class="clap active">
                  <i class="far fa-thumbs-up"></i>
                </div>
@@ -70,8 +88,12 @@
                  
                  </div>
 
-                  <a href="?delete=1&id=<?=$post['id']?>">Delete</a>
+                  <a href="?delete=1&id=<?=$post['id']?>"><i class="fas fa-trash-alt"></i></a>
 
+                  <?php if($post['pinned'] == 1):?>
+                  <a href="#" class="unpinned"><i class="fas fa-thumbtack"></i></a>
+
+                <?php endif; ?>
             </div>
 <?php endforeach;?>
       </aside>
