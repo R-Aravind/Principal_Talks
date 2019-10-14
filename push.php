@@ -12,12 +12,13 @@ if(isset($_REQUEST['logout'])){
   $AdminModel->logout();
 }
 
-
+// if not login redirect -> login.php
 if(!($AdminModel->isLogin())){
   header('Location: login.php');
   die();
 }
 
+// post content
 if(isset($_POST['content'])){
   $pinned = 0;
   if(isset($_POST['pinned'])){
@@ -30,10 +31,27 @@ if(isset($_POST['content'])){
   }
 }
 
+// delete post
 if(isset($_GET['delete']) && isset($_GET['id'])){
   $id = $_GET['id'];
   if($AdminModel->isLogin()){
     $PostModel->deletePost($id);
+  }
+}
+
+// unpin a post
+if(isset($_GET['unpin']) && isset($_GET['id'])){
+  $id = $_GET['id'];
+  if($AdminModel->isLogin()){
+    $PostModel->unpinPost($id);
+  }
+}
+
+// redirect -> edit
+if(isset($_GET['edit']) && isset($_GET['id'])){
+  $id = $_GET['id'];
+  if($AdminModel->isLogin()){
+    header('Location: edit.php?id='.$id);
   }
 }
 
@@ -93,10 +111,10 @@ if(isset($_GET['delete']) && isset($_GET['id'])){
 
           <div class="icon-box">
             <?php if($post['pinned'] == 1):?>
-            <a href="#" class="unpinned icon"><i class="fas fa-thumbtack"></i></a>
+              <a href="?unpin=1&id=<?=$post['id']?>" class="unpinned icon"><i class="fas fa-thumbtack"></i></a>
             <?php endif; ?>
             <a href="?delete=1&id=<?=$post['id']?>" class="icon"><i class="fas fa-trash-alt"></i></a>
-            <a href="#" class="icon"><i class="far fa-edit"></i></a>
+            <a href="?edit=1&id=<?=$post['id']?>" class="icon"><i class="far fa-edit"></i></a>
           </div>
         </div>
 
