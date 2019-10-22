@@ -81,7 +81,8 @@ class Admin extends Database{
 			if($result->num_rows > 0){
 				$admin = $result->fetch_assoc();
 				if(password_verify($password, $admin['password'])){
-					return $admin['id'];
+					$_SESSION['user_id'] = $admin['id'];
+					return TRUE;
 				}else{
 					return FALSE;
 				}

@@ -12,6 +12,8 @@ Avaliable Methods:
 	5)getRecentPosts()
 	6)deletePost(int $id)
 	7)likePost(int $id)
+	8)unpinPost(int $id)
+	9)updatePost(int $id, string $content, int $pinned)
 
 */
 
@@ -91,6 +93,25 @@ class Post extends Database{
 	public function deletePost(int $id){
 		$id = $this->conn->real_escape_string($id);
 		$sql = "DELETE FROM `posts` WHERE `id`=$id";
+
+		$this->conn->query($sql);
+	}
+
+	// unpin a post @param id
+	public function unpinPost(int $id){
+		$id = $this->conn->real_escape_string($id);
+		$sql = "UPDATE `posts` SET `pinned` = '0' WHERE `posts`.`id`=$id";
+
+		$this->conn->query($sql);
+	}
+
+	// update a post @param id, content and pinned
+	public function updatePost(int $id, string $content, int $pinned){
+		$id = $this->conn->real_escape_string($id);
+		$content = $this->conn->real_escape_string($content);
+		$pinned = $this->conn->real_escape_string($pinned);
+
+		$sql = "UPDATE `posts` SET `content` = '$content', `pinned` = $pinned WHERE `posts`.`id` = $id";
 
 		$this->conn->query($sql);
 	}

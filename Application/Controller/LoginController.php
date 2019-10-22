@@ -16,7 +16,10 @@ class LoginController{
 
 		session_regenerate_id();
 
-		if($_SESSION['user_id'] = $adminModel->authenticate($email, $password)){
+		// if($_SESSION['user_id'] = $adminModel->authenticate($email, $password)){
+		// 	return TRUE;
+		// }
+		if($adminModel->authenticate($email, $password)){
 			return TRUE;
 		}
 		else{
