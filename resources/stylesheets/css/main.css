@@ -2,58 +2,92 @@
 @import url("https://fonts.googleapis.com/css?family=Squada+One&display=swap");
 section.pinned-section .card, section.recent-section .recent-cards .card {
   width: 500px;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   padding: 10px 40px 30px 0px;
   text-align: justify;
   position: relative;
   background: #f3f4f3;
-  box-shadow: 0px 0px 29px -13px rgba(87, 84, 87, 0.51);
+  -webkit-box-shadow: 0px 0px 29px -13px rgba(87, 84, 87, 0.51);
+          box-shadow: 0px 0px 29px -13px rgba(87, 84, 87, 0.51);
   border-radius: 12px;
   font-family: "Josefin Sans", sans-serif;
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 20% auto;
+  -ms-grid-columns: 20% auto;
+      grid-template-columns: 20% auto;
 }
+
 @media (max-width: 992px) {
   section.pinned-section .card, section.recent-section .recent-cards .card {
     width: 100%;
   }
 }
+
+@media (max-width: 576px) {
+  section.pinned-section .card, section.recent-section .recent-cards .card {
+    padding: 20px;
+  }
+}
+
 section.pinned-section .card .card-date, section.recent-section .recent-cards .card .card-date {
   text-align: center;
   font-size: 1em;
   font-weight: bold;
   line-height: 18px;
   color: #0c0d0c;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   line-height: 30px;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding-top: 20px;
 }
+
 section.pinned-section .card .card-date .day, section.recent-section .recent-cards .card .card-date .day {
   font-family: "Squada", cursive;
   font-size: 3em;
 }
+
 section.pinned-section .card .card-date .month, section.recent-section .recent-cards .card .card-date .month {
   font-family: "Squada", cursive;
   font-size: 1.2em;
   padding-top: 10px;
 }
+
 section.pinned-section .card .card-date .year, section.recent-section .recent-cards .card .card-date .year {
   font-size: 0.8em;
 }
+
 section.pinned-section .card .card-content, section.recent-section .recent-cards .card .card-content {
   font-size: 1.1em;
   width: 100%;
   line-height: 22px;
   color: #000000;
 }
+
 section.pinned-section .card .card-content:before, section.recent-section .recent-cards .card .card-content:before {
   content: '\A';
   white-space: pre;
 }
+
+@media (max-width: 576px) {
+  section.pinned-section .card .card-content, section.recent-section .recent-cards .card .card-content {
+    padding-left: 25px;
+  }
+}
+
 section.pinned-section .card .card-like, section.recent-section .recent-cards .card .card-like {
   background: #FFF;
   width: 35px;
@@ -63,27 +97,38 @@ section.pinned-section .card .card-like, section.recent-section .recent-cards .c
   top: 85%;
   padding: 10px;
   border-radius: 100%;
-  box-shadow: 0px 0px 50px -8px #949294;
+  border: #e6e8e6 solid 1px;
+  -webkit-transition: -webkit-box-shadow 0.8s;
+  transition: -webkit-box-shadow 0.8s;
   transition: box-shadow 0.8s;
+  transition: box-shadow 0.8s, -webkit-box-shadow 0.8s;
 }
-section.pinned-section .card .card-like img, section.recent-section .recent-cards .card .card-like img {
-  width: inherit;
-  position: relative;
-  left: 2px;
-  transition: filter 0.5s;
-}
+
 section.pinned-section .card .card-like .plus1, section.recent-section .recent-cards .card .card-like .plus1 {
   position: absolute;
   z-index: 1;
   display: none;
   left: 20px;
 }
+
+section.pinned-section .card .card-like img, section.recent-section .recent-cards .card .card-like img {
+  width: inherit;
+  position: relative;
+  left: 2px;
+  -webkit-transition: -webkit-filter 0.5s;
+  transition: -webkit-filter 0.5s;
+  transition: filter 0.5s;
+  transition: filter 0.5s, -webkit-filter 0.5s;
+}
+
 section.pinned-section .card .card-like img:hover, section.recent-section .recent-cards .card .card-like img:hover {
   -webkit-filter: contrast(250%);
   filter: contrast(250%);
 }
+
 section.pinned-section .card .card-like:hover, section.recent-section .recent-cards .card .card-like:hover {
-  box-shadow: 0px 0px 50px -8px #292829;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(148, 146, 148, 0.4);
+          box-shadow: 0px 0px 10px 0px rgba(148, 146, 148, 0.4);
   cursor: pointer;
 }
 
@@ -108,6 +153,8 @@ section.pinned-section .card .card-like:hover, section.recent-section .recent-ca
 
 
 Made by github.com/ghostjson
+contributors:
+	github.com/r-aravind
 */
 * {
   margin: 0px;
@@ -126,16 +173,18 @@ body {
   font-family: "Source Sans Pro", "Impact", sans-serif;
   margin-bottom: 50px;
 }
+
 @media (max-width: 768px) {
   .container {
     margin-left: 50px;
     margin-right: 50px;
   }
 }
+
 @media (max-width: 576px) {
   .container {
-    margin-right: 10px;
-    margin-left: 10px;
+    margin-right: 30px;
+    margin-left: 30px;
   }
 }
 
@@ -143,14 +192,20 @@ aside.mic {
   position: absolute;
   right: 35px;
   top: 55px;
-  animation-name: anim;
-  animation-duration: 1s;
-  animation-iteration-count: 1;
-  animation-timing-function: ease-in-out;
+  -webkit-animation-name: anim;
+          animation-name: anim;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
 }
+
 aside.mic img {
   height: 400px;
 }
+
 @media (max-width: 992px) {
   aside.mic img {
     visibility: hidden;
@@ -159,18 +214,24 @@ aside.mic img {
 
 header {
   background: #262626;
-  box-shadow: 12px 20px 29px -13px rgba(87, 84, 87, 0.51);
-  box-shadow: 0px 10px 22px -2px #7a7a7a;
+  -webkit-box-shadow: 12px 20px 29px -13px rgba(87, 84, 87, 0.51);
+          box-shadow: 12px 20px 29px -13px rgba(87, 84, 87, 0.51);
+  -webkit-box-shadow: 0px 10px 22px -2px #7a7a7a;
+          box-shadow: 0px 10px 22px -2px #7a7a7a;
   color: #f3f4f3;
   font-family: "Source Sans Pro", "Impact", sans-serif;
   font-weight: 400;
   width: 100%;
 }
+
 header h1.main-heading {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   height: 40px;
   margin-bottom: 30px;
 }
+
 header h1.main-heading .logo {
   background: green;
   width: 80px;
@@ -183,35 +244,48 @@ header h1.main-heading .logo {
   position: relative;
   right: 20px;
 }
+
 header h1.main-heading .caption {
   line-height: 70px;
   margin-left: 100px;
 }
 
+@media (max-width: 576px) {
+  header h1.main-heading .caption {
+    margin-left: 20px;
+  }
+}
+
 .container h2.sub-heading {
   width: 100%;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
   margin-top: 40px;
   height: 50px;
 }
+
 .container h2.sub-heading .pp img {
   width: 50px;
   border-radius: 100%;
 }
+
 @media (max-width: 576px) {
   .container h2.sub-heading .pp img {
-    width: 40px;
+    width: 70px;
   }
 }
+
 .container h2.sub-heading .name {
   font-size: 1.4em;
   padding-left: 20px;
   line-height: 50px;
 }
+
 @media (max-width: 576px) {
   .container h2.sub-heading .name {
-    font-size: 1em;
-    line-height: 50px;
+    font-size: 2em;
+    line-height: 70px;
   }
 }
 
@@ -219,47 +293,75 @@ section.pinned-section {
   margin-top: 30px;
   margin-bottom: 30px;
 }
+
 section.pinned-section .heading {
   font-size: 2em;
   font-weight: 300;
   margin-bottom: 10px;
 }
+
 @media (max-width: 576px) {
   section.pinned-section .heading {
-    font-size: 1.5em;
+    font-size: 2em;
+    font-weight: 600;
+    margin-bottom: 20px;
   }
 }
+
 section.pinned-section .card {
-  margin-bottom: 20px;
+  margin-bottom: 45px;
+}
+
+@media (max-width: 576px) {
+  section.pinned-section .card {
+    margin-bottom: 60px;
+  }
 }
 
 section.recent-section {
   margin-top: 30px;
   margin-bottom: 20px;
 }
+
 section.recent-section .heading {
   font-size: 2em;
   font-weight: 300;
   margin-bottom: 10px;
 }
+
 @media (max-width: 576px) {
   section.recent-section .heading {
-    font-size: 1.5em;
+    font-size: 2em;
+    font-weight: 600;
+    margin-bottom: 20px;
   }
 }
+
 section.recent-section .recent-cards {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
+
 section.recent-section .recent-cards .card {
-  margin-right: 20px;
-  margin-bottom: 40px;
+  margin-right: 30px;
+  margin-bottom: 50px;
 }
+
 @media (max-width: 992px) {
   section.recent-section .recent-cards .card {
     margin-bottom: 50px;
   }
 }
+
+@media (max-width: 576px) {
+  section.recent-section .recent-cards .card {
+    margin-bottom: 60px;
+  }
+}
+
 @media (max-width: 992px) {
   section.recent-section .recent-cards {
     display: block;
@@ -270,13 +372,31 @@ section.recent-section .recent-cards .card {
   font-size: 1.2em;
   color: gray;
 }
-.showmore a, .showmore a:active, .showmore a:hover, .showmore a:visited {
+
+.showmore a,
+.showmore a:active,
+.showmore a:hover,
+.showmore a:visited {
   color: #0c0d0c;
   text-decoration: none;
+  -webkit-transition: color 0.5s;
   transition: color 0.5s;
 }
+
 .showmore a:hover {
   color: black;
+}
+
+@-webkit-keyframes anim {
+  0% {
+    top: -50px;
+  }
+  95% {
+    top: 60px;
+  }
+  100% {
+    top: 55px;
+  }
 }
 
 @keyframes anim {
@@ -290,5 +410,4 @@ section.recent-section .recent-cards .card {
     top: 55px;
   }
 }
-
 /*# sourceMappingURL=main.css.map */

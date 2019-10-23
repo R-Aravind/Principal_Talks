@@ -15,8 +15,7 @@ $months = array("","JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","
 	<title>Pricipal Talks</title>
 
 	<!-- stylesheets -->
-	<!-- <link rel="stylesheet" type="text/css" href="./resources/stylesheets/css/main.css"> -->
-	<link rel="stylesheet" type="text/css" href="./resources/stylesheets/scss/main.css">
+	<link rel="stylesheet" type="text/css" href="./resources/stylesheets/css/main.css">
 	<!-- stylesheets end -->
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
