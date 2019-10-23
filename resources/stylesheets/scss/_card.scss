@@ -1,25 +1,28 @@
 // Card Template
 // include $card-bg & $date-color
 
-%card{
+%card {
 	width: 500px;
 	box-sizing: border-box;
 	padding: 10px 40px 30px 0px;
 	text-align: justify;
 	position: relative;
 	background: $card-bg;
-	box-shadow: 0px 0px 29px -13px rgba(87,84,87,0.51);
+	box-shadow: 0px 0px 29px -13px rgba(87, 84, 87, 0.51);
 	border-radius: 12px;
 	font-family: $text-font;
 	display: grid;
 	grid-template-columns: 20% auto;
 
-	@include lg{
+	@include lg {
 		width: 100%;
 	}
 
+	@include sm {
+		padding: 20px;
+	}
 
-	.card-date{
+	.card-date {
 		text-align: center;
 		font-size: 1em;
 		font-weight: bold;
@@ -33,34 +36,41 @@
 		align-items: center;
 		padding-top: 20px;
 
-		.day{
+		.day {
 			font-family: $bold-font;
 			font-size: 3em;
 		}
-		.month{
+
+		.month {
 			font-family: $bold-font;
 			font-size: 1.2em;
 			padding-top: 10px;
 		}
-		.year{
+
+		.year {
 			font-size: 0.8em;
 		}
 	}
 
 
-	.card-content{
+	.card-content {
 		font-size: 1.1em;
 		width: 100%;
 		line-height: 22px;
 		color: $card-text;
-		&:before{
+
+		&:before {
 			content: '\A';
 			white-space: pre;
+		}
+
+		@include sm {
+			padding-left: 25px;
 		}
 	}
 
 
-	.card-like{
+	.card-like {
 		background: #FFF;
 		width: 35px;
 		height: 35px;
@@ -69,30 +79,32 @@
 		top: 85%;
 		padding: 10px;
 		border-radius: 100%;
-		box-shadow: 0px 0px 50px -8px rgba(148,146,148,1);
+		border: #e6e8e6 solid 1px;
+		// box-shadow: 0px 0px 50px -8px rgba(148, 146, 148, 1);
 		transition: box-shadow 0.8s;
 
-		.plus1{
+		.plus1 {
 			position: absolute;
 			z-index: 1;
 			display: none;
 			left: 20px;
 		}
 
-		img{
+		img {
 			width: inherit;
 			position: relative;
 			left: 2px;
 			transition: filter 0.5s;
 
-			&:hover{
+			&:hover {
 				-webkit-filter: contrast(250%);
 				filter: contrast(250%);
 			}
 		}
 
-		&:hover{
-			box-shadow: 0px 0px 50px -8px rgba(41,40,41,1);
+		&:hover {
+			box-shadow: 0px 0px 10px 0px rgba(148, 146, 148, 0.4);
+			// box-shadow: 0px 0px 50px -8px rgba(41, 40, 41, 1);
 			cursor: pointer;
 		}
 	}
@@ -119,4 +131,6 @@
 
 
 Made by github.com/ghostjson
+contributors:
+	github.com/r-aravind
 */
