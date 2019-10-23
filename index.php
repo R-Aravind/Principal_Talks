@@ -4,6 +4,9 @@ include 'autoload.php';
 
 use \Application\Model\Post;
 
+
+$months = array("","JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC");
+
 ?>
 
 <!DOCTYPE html>
@@ -12,8 +15,8 @@ use \Application\Model\Post;
 	<title>Pricipal Talks</title>
 
 	<!-- stylesheets -->
-	<link rel="stylesheet" type="text/css" href="./resources/stylesheets/css/main.css">
-
+	<!-- <link rel="stylesheet" type="text/css" href="./resources/stylesheets/css/main.css"> -->
+	<link rel="stylesheet" type="text/css" href="./resources/stylesheets/scss/main.css">
 	<!-- stylesheets end -->
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -59,8 +62,9 @@ use \Application\Model\Post;
 			<div class="card">
 				<span class="card-date">
 					<?php $d = explode('-', $post['date']) ?>
+					
 					<div class="day"><?=$d['2']?></div>
-					<div class="month"><?=$d['1']?></div>
+					<div class="month"><?=$months[$d[1]]?></div>
 					<div class="year"><?=$d['0']?></div>
 				</span>
 				<span class="card-content">
@@ -93,7 +97,7 @@ use \Application\Model\Post;
 					<span class="card-date">
 						<?php $d = explode('-', $post['date']) ?>
 						<div class="day"><?=$d['2']?></div>
-						<div class="month"><?=$d['1']?></div>
+						<div class="month"><?=$months[$d['1']]?></div>
 						<div class="year"><?=$d['0']?></div>
 					</span>
 					<div class="card-content">
