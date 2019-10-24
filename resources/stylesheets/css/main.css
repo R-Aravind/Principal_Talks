@@ -26,7 +26,8 @@ section.pinned-section .card, section.recent-section .recent-cards .card {
 
 @media (max-width: 576px) {
   section.pinned-section .card, section.recent-section .recent-cards .card {
-    padding: 20px;
+    padding: 10px;
+    padding-right: 15px;
   }
 }
 
@@ -45,19 +46,22 @@ section.pinned-section .card .card-date, section.recent-section .recent-cards .c
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   line-height: 30px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-top: 20px;
+  padding-top: 30px;
 }
 
 section.pinned-section .card .card-date .day, section.recent-section .recent-cards .card .card-date .day {
   font-family: "Squada", cursive;
   font-size: 3em;
+}
+
+@media (max-width: 576px) {
+  section.pinned-section .card .card-date .day, section.recent-section .recent-cards .card .card-date .day {
+    font-size: 2.6em;
+  }
 }
 
 section.pinned-section .card .card-date .month, section.recent-section .recent-cards .card .card-date .month {
@@ -71,8 +75,8 @@ section.pinned-section .card .card-date .year, section.recent-section .recent-ca
 }
 
 section.pinned-section .card .card-content, section.recent-section .recent-cards .card .card-content {
-  font-size: 1.1em;
-  width: 100%;
+  font-size: 0.9em;
+  width: 90%;
   line-height: 22px;
   color: #000000;
 }
@@ -84,7 +88,8 @@ section.pinned-section .card .card-content:before, section.recent-section .recen
 
 @media (max-width: 576px) {
   section.pinned-section .card .card-content, section.recent-section .recent-cards .card .card-content {
-    padding-left: 25px;
+    padding-left: 10px;
+    padding-bottom: 25px;
   }
 }
 
@@ -94,7 +99,7 @@ section.pinned-section .card .card-like, section.recent-section .recent-cards .c
   height: 35px;
   position: absolute;
   right: 40px;
-  top: 85%;
+  bottom: -17.5px;
   padding: 10px;
   border-radius: 100%;
   border: #e6e8e6 solid 1px;
