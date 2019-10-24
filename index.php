@@ -41,12 +41,12 @@ $months = array("","JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","
 	<div class="container">
 
 		<!-- Sub Heading -->
-		<h2 class="sub-heading">
+		<!-- <h2 class="sub-heading">
 			<div class="pp">
 				<img src="./resources/images/avatar.png">
 			</div>
-			<div class="name">Jacob</div>
-		</h2>
+			<div class="name">Principal</div>
+		</h2> -->
 	
 
 		<!-- Pinned Section-->
@@ -63,8 +63,7 @@ $months = array("","JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","
 					<?php $d = explode('-', $post['date']) ?>
 					
 					<div class="day"><?=$d['2']?></div>
-					<div class="month"><?=$months[$d[1]]?></div>
-					<div class="year"><?=$d['0']?></div>
+					<div class="month"><?=$months[$d['1']]?>  <?=$d['0']?></div>
 				</span>
 				<span class="card-content">
 					<?= $post['content']?>
@@ -96,8 +95,7 @@ $months = array("","JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","
 					<span class="card-date">
 						<?php $d = explode('-', $post['date']) ?>
 						<div class="day"><?=$d['2']?></div>
-						<div class="month"><?=$months[$d['1']]?></div>
-						<div class="year"><?=$d['0']?></div>
+						<div class="month"><?=$months[$d['1']]?>  <?=$d['0']?></div>
 					</span>
 					<div class="card-content">
 						<?= $post['content'] ?>
