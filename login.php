@@ -48,32 +48,33 @@
 
 <body>
 
+  <header>
+		<h1 class="main-heading">
+			<!-- <div class="logo">LOGO</div> -->
+			<div class="caption">Principal Talks</div>
+		</h1>
+	</header>
+
   <div class="container">
   <form class="login" action="login.php" method="POST">
 
 
-  <fieldset>
-
-  	<legend class="legend">Login</legend>
 
     <div class="input">
     	<input type="username" placeholder="Username" name="username" required />
-      <span><i class="fa fa-envelope-o"></i></span>
     </div>
 
     <div class="input">
     	<input type="password" placeholder="Password" name="password" required />
-      <span><i class="fa fa-lock"></i></span>
     </div>
 
-    <button type="submit" class="submit"><i class="fa fa-long-arrow-right"></i></button>
-
-  </fieldset>
+    <input type="submit" class="submit" value="Login"> 
+    <!-- Login</button> -->
 
   </form>
   </div>
 
-  <script
+  <!-- <script
   src="https://code.jquery.com/jquery-3.4.1.min.js"
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
   crossorigin="anonymous">
@@ -92,7 +93,7 @@
     .animate({ opacity: "1" }, 300);
   });
 
-</script>
+</script> -->
 
   </body>
 </html>
