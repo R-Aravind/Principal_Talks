@@ -48,6 +48,9 @@ $months = array("","JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","
 			<div class="name">Principal</div>
 		</h2> -->
 	
+		<!-- Empty placeholder -->
+
+		<h1 class="temp-placeholder">Hello world</h1>
 
 		<!-- Pinned Section-->
 
