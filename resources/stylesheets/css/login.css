@@ -76,7 +76,7 @@ form input {
   form {
     width: 80%;
     height: 65%;
-    border-radius: 30px;
+    border-radius:0 30px;
   }
 
   form input {
