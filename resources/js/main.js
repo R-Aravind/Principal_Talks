@@ -19,3 +19,15 @@ function animateLike(obj){
 		$(this).hide();
 	});
 }
+
+
+
+//if there is no post hide heading
+$('.temp-placeholder').hide();
+if(!($('.pinned-section .card').length)){
+	$('.pinned-section .heading').hide();
+	if(!($('.recent-section .card').length)){
+		$('.recent-section .heading').hide();
+		$('.temp-placeholder').show();
+	}
+}

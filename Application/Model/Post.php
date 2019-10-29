@@ -54,7 +54,7 @@ class Post extends Database{
 
 	// get all pinned posts
 	public function getPinnedPosts(){
-		$sql = "SELECT * FROM posts ORDER BY date DESC, id DESC";
+		$sql = "SELECT * FROM posts WHERE `pinned`=1 ORDER BY date DESC, id DESC";
 
 		$result = $this->conn->query($sql);
 		$posts = array();
