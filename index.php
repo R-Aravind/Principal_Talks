@@ -50,7 +50,7 @@ $months = array("","JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","
 	
 		<!-- Empty placeholder -->
 
-		<h1 class="temp-placeholder">No messages yet</h1>
+		<h1 class="temp-placeholder">No messages yet.</h1>
 
 		<!-- Pinned Section-->
 
