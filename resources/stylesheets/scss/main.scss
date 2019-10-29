@@ -195,32 +195,24 @@ section.recent-section {
 		}
 	}
 
-	.recent-cards {
-
-		display: inline-flex;
-		flex-wrap: wrap;
-
-
-		.card {
-			@extend %card;
-			margin-right: 30px;
-			margin-bottom: 50px;
-
-			@include lg {
-				margin-bottom: 50px;
-			}
-
-			@include sm {
-				margin-bottom: 60px;
-			}
-
-		}
+	.card {
+		@extend %card;
+		margin-right: 30px;
+		margin-bottom: 50px;
 
 		@include lg {
-			display: block;
+			margin-bottom: 50px;
 		}
+
+		@include sm {
+			margin-bottom: 60px;
+		}
+
 	}
 
+	@include lg {
+		display: block;
+	}
 
 }
 

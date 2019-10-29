@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap|Josefin+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Squada+One&display=swap");
-section.pinned-section .card, section.recent-section .recent-cards .card {
+section.pinned-section .card, section.recent-section .card {
   width: 80%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -19,19 +19,19 @@ section.pinned-section .card, section.recent-section .recent-cards .card {
 }
 
 @media (max-width: 992px) {
-  section.pinned-section .card, section.recent-section .recent-cards .card {
+  section.pinned-section .card, section.recent-section .card {
     width: 100%;
   }
 }
 
 @media (max-width: 576px) {
-  section.pinned-section .card, section.recent-section .recent-cards .card {
+  section.pinned-section .card, section.recent-section .card {
     padding: 10px;
     padding-right: 15px;
   }
 }
 
-section.pinned-section .card .card-date, section.recent-section .recent-cards .card .card-date {
+section.pinned-section .card .card-date, section.recent-section .card .card-date {
   text-align: center;
   font-size: 1em;
   font-weight: bold;
@@ -55,58 +55,58 @@ section.pinned-section .card .card-date, section.recent-section .recent-cards .c
 }
 
 @media (max-width: 576px) {
-  section.pinned-section .card .card-date, section.recent-section .recent-cards .card .card-date {
+  section.pinned-section .card .card-date, section.recent-section .card .card-date {
     line-height: 20px;
     padding-bottom: 20px;
   }
 }
 
-section.pinned-section .card .card-date .day, section.recent-section .recent-cards .card .card-date .day {
+section.pinned-section .card .card-date .day, section.recent-section .card .card-date .day {
   font-size: 3em;
 }
 
 @media (max-width: 576px) {
-  section.pinned-section .card .card-date .day, section.recent-section .recent-cards .card .card-date .day {
+  section.pinned-section .card .card-date .day, section.recent-section .card .card-date .day {
     font-size: 2.6em;
   }
 }
 
-section.pinned-section .card .card-date .month, section.recent-section .recent-cards .card .card-date .month {
+section.pinned-section .card .card-date .month, section.recent-section .card .card-date .month {
   font-size: 0.85em;
   padding-top: 5px;
 }
 
 @media (max-width: 576px) {
-  section.pinned-section .card .card-date .month, section.recent-section .recent-cards .card .card-date .month {
+  section.pinned-section .card .card-date .month, section.recent-section .card .card-date .month {
     font-size: 0.6em;
   }
 }
 
-section.pinned-section .card .card-date .year, section.recent-section .recent-cards .card .card-date .year {
+section.pinned-section .card .card-date .year, section.recent-section .card .card-date .year {
   font-size: 0.85em;
   padding-top: 5px;
 }
 
-section.pinned-section .card .card-content, section.recent-section .recent-cards .card .card-content {
+section.pinned-section .card .card-content, section.recent-section .card .card-content {
   font-size: 0.9em;
   width: 90%;
   line-height: 22px;
   color: #000000;
 }
 
-section.pinned-section .card .card-content:before, section.recent-section .recent-cards .card .card-content:before {
+section.pinned-section .card .card-content:before, section.recent-section .card .card-content:before {
   content: '\A';
   white-space: pre;
 }
 
 @media (max-width: 576px) {
-  section.pinned-section .card .card-content, section.recent-section .recent-cards .card .card-content {
+  section.pinned-section .card .card-content, section.recent-section .card .card-content {
     padding-left: 10px;
     padding-bottom: 35px;
   }
 }
 
-section.pinned-section .card .card-like, section.recent-section .recent-cards .card .card-like {
+section.pinned-section .card .card-like, section.recent-section .card .card-like {
   background: #FFF;
   width: 35px;
   height: 35px;
@@ -122,14 +122,14 @@ section.pinned-section .card .card-like, section.recent-section .recent-cards .c
   transition: box-shadow 0.8s, -webkit-box-shadow 0.8s;
 }
 
-section.pinned-section .card .card-like .plus1, section.recent-section .recent-cards .card .card-like .plus1 {
+section.pinned-section .card .card-like .plus1, section.recent-section .card .card-like .plus1 {
   position: absolute;
   z-index: 1;
   display: none;
   left: 20px;
 }
 
-section.pinned-section .card .card-like img, section.recent-section .recent-cards .card .card-like img {
+section.pinned-section .card .card-like img, section.recent-section .card .card-like img {
   width: inherit;
   position: relative;
   left: 2px;
@@ -139,12 +139,12 @@ section.pinned-section .card .card-like img, section.recent-section .recent-card
   transition: filter 0.5s, -webkit-filter 0.5s;
 }
 
-section.pinned-section .card .card-like img:hover, section.recent-section .recent-cards .card .card-like img:hover {
+section.pinned-section .card .card-like img:hover, section.recent-section .card .card-like img:hover {
   -webkit-filter: contrast(250%);
   filter: contrast(250%);
 }
 
-section.pinned-section .card .card-like:hover, section.recent-section .recent-cards .card .card-like:hover {
+section.pinned-section .card .card-like:hover, section.recent-section .card .card-like:hover {
   -webkit-box-shadow: 0px 0px 10px 0px rgba(148, 146, 148, 0.4);
           box-shadow: 0px 0px 10px 0px rgba(148, 146, 148, 0.4);
   cursor: pointer;
@@ -358,33 +358,25 @@ section.recent-section .heading {
   }
 }
 
-section.recent-section .recent-cards {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-section.recent-section .recent-cards .card {
+section.recent-section .card {
   margin-right: 30px;
   margin-bottom: 50px;
 }
 
 @media (max-width: 992px) {
-  section.recent-section .recent-cards .card {
+  section.recent-section .card {
     margin-bottom: 50px;
   }
 }
 
 @media (max-width: 576px) {
-  section.recent-section .recent-cards .card {
+  section.recent-section .card {
     margin-bottom: 60px;
   }
 }
 
 @media (max-width: 992px) {
-  section.recent-section .recent-cards {
+  section.recent-section {
     display: block;
   }
 }
