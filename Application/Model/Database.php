@@ -9,11 +9,6 @@ class Database{
 	 private $username = 'root';
 	 private $password = '';
 
-	//private $host = 'localhost';
-	//private $db_name = 'id10508931_principle_talks';
-	//private $username = 'id10508931_ghostjson';
-	//private $password = '123456';
-
 	public $conn;
 
 	function __construct(){

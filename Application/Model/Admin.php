@@ -20,16 +20,14 @@ namespace Application\Model;
 class Admin extends Database{ 
 
 	// add an admin user
-	public function addAdmin(string $first_name,string $last_name,string $password, string $email){
+	public function addAdmin(string $email, string $password){
 
-		$first_name = $this->conn->real_escape_string($first_name);
-		$last_name = $this->conn->real_escape_string($last_name);
 		$password = $this->conn->real_escape_string($password);
 		$email = $this->conn->real_escape_string($email);
 
 		$password = password_hash($password, PASSWORD_BCRYPT);
 
-		$sql = "INSERT INTO `admins` (`id`, `first_name`, `last_name`, `password`, `email`) VALUES (NULL, '$first_name', '$last_name', '$password', '$email')";
+		$sql = "INSERT INTO `admins` (`id`, `password`, `email`) VALUES (NULL, '$password', '$email')";
 
 		if($this->conn->query($sql) == TRUE){
 			return TRUE;

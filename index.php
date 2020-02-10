@@ -96,9 +96,9 @@ $months = array("","JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","
 				<?php foreach ((new Post())->getRecentPosts() as $post): ?>
 				<div class="card">
 					<span class="card-date">
-						<?php $d = explode('-', $post['date']) ?>
-						<div class="day"><?=$d['2']?></div>
-						<div class="month"><?=$months[$d['1']]?>  <?=$d['0']?></div>
+						<?php $d = explode('-', $post['date']);?>
+						<div class="day"><?= $d['2'] ?></div>
+						<div class="month"><?=$months[intval($d['1'])]?>  <?=$d['0']?></div>
 					</span>
 					<div class="card-content">
 						<?= $post['content'] ?>
@@ -115,10 +115,6 @@ $months = array("","JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","
 		<!-- Recent Section End -->
 
 
-		<!-- Show More -->
-		<!-- <small class="showmore">
-			<a href="#">show more<a>
-		</small> -->
 	</div>
 	<!-- Container End-->
 

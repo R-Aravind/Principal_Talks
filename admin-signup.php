@@ -2,31 +2,23 @@
 
   include 'autoload.php';
 
-  use \Application\Controller\LoginController;
+  use \Application\Model\Admin;
 
 
-  $admin = new LoginController();
+  $admin = new Admin();
 
   if(isset($_POST['email']) && isset($_POST['password'])){
     $email = $_POST['email'];
     $password = $_POST['password'];
 
     if(!empty($email) && !empty($password)){
-
-
-      if($admin->login($email, $password)){
-        header('Location: push.php');
+      if($admin->addAdmin($email, $password)){
+        header('Location: login.php');
       }else{
-        echo '<h4>Incorrect username or password</h4>';
+        echo '<h4>Error creating admin</h4>';
       }
     }
   }
-
-  if($admin->isLogin()){
-    header('Location: push.php');
-  }
-
-
 
 
 ?>
@@ -35,7 +27,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Principal Login</title>
+  <title>Principal Signup</title>
 
     <link rel="stylesheet" href="./resources/stylesheets/css/login.css" media="screen" type="text/css" />
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,700">
@@ -56,7 +48,7 @@
 	</header>
 
   <div class="container">
-  <form class="login" action="login.php" method="POST">
+  <form class="login" action="admin-signup.php" method="POST">
 
 
 
@@ -68,7 +60,8 @@
     	<input type="password" placeholder="Password" name="password" required />
     </div>
 
-    <input type="submit" class="submit" value="Login"> 
+
+    <input type="submit" class="submit" value="SignUp"> 
     <!-- Login</button> -->
 
   </form>

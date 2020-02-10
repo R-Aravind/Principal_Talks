@@ -61,7 +61,7 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
     <div class="profile">
       <img src="./resources/images/avatar.png">
       <span>
-        <p>Hi, <b>Jacob</b> </p>
+        <p>Hi, <b>Principal</b> </p>
       </span>
       <span class="logout"><a href="?logout">Logout</a></span>
     </div>
