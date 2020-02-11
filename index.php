@@ -66,7 +66,7 @@ $months = array("","JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","
 					<?php $d = explode('-', $post['date']) ?>
 					
 					<div class="day"><?=$d['2']?></div>
-					<div class="month"><?=$months[$d['1']]?>  <?=$d['0']?></div>
+					<div class="month"><?=$months[intval($d['1'])]?>  <?=$d['0']?></div>
 				</span>
 				<span class="card-content">
 					<?= $post['content']?>
